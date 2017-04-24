@@ -26,7 +26,8 @@
         },
         "files": [
             "bootstrap/helpers/constants.php",
-            "bootstrap/helpers/helpers.php"
+            "bootstrap/helpers/helpers.php",
+            "bootstrap/helpers/html_helpers.php"
         ]
     },
     "autoload-dev": {

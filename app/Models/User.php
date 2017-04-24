@@ -3,8 +3,8 @@
 namespace App\Models;
 
 use App\Models\Components\CurrentRole;
+use App\Models\Components\CurrentStatus;
 use App\Models\Contracts\UserContract;
-use App\Models\Traits\Roleable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -88,5 +88,39 @@ class User extends Authenticatable implements UserContract
     public function currentRole()
     {
         return new CurrentRole($this);
+    }
+
+    /**
+     * Get current status
+     *
+     * @return CurrentStatus
+     */
+    public function currentStatus()
+    {
+        return new CurrentStatus($this);
+    }
+
+    /**
+     * Get full name
+     *
+     * @return string|null
+     */
+    public function getFullName()
+    {
+        if ($this->first_name && $this->last_name) {
+            return trim($this->first_name . ' ' . $this->last_name);
+        }
+
+        return null;
+    }
+
+    /**
+     * Get identifier string
+     *
+     * @return string
+     */
+    public function getIdentifier()
+    {
+        return $this->getFullName() ?: $this->email;
     }
 }

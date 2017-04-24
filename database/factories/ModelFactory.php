@@ -12,9 +12,7 @@
 */
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-use App\Models\User;
-
-$factory->define(User::class, function (Faker\Generator $faker) {
+$factory->define(\App\Models\User::class, function (\Faker\Generator $faker) {
     return [
         'email' => $faker->email,
         'password' => bcrypt('admin123'),
@@ -24,6 +22,24 @@ $factory->define(User::class, function (Faker\Generator $faker) {
         'address' => $faker->address,
         'active' => true,
         'blocked' => false,
-        'role_id' => User::USER,
+        'role_id' => \App\Models\User::USER,
+    ];
+});
+
+$factory->define(\App\Models\Category::class, function (\Faker\Generator $faker) {
+    return [
+        'name' => $faker->name,
+        'description' => $faker->sentence,
+        'active' => true,
+    ];
+});
+
+$factory->define(\App\Models\Seo::class, function (\Faker\Generator $faker) {
+    $slug = str_slug(strtolower($faker->unique()->sentence));
+
+    return [
+        'title' => $faker->sentence,
+        'description' => $faker->sentence,
+        'alias' => $slug,
     ];
 });

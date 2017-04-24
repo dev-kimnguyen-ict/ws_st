@@ -9,27 +9,26 @@
 namespace App\Models\Components;
 
 use App\Models\User;
-use Illuminate\Database\Eloquent\Model;
 
-class CurrentRole
+/**
+ * Class CurrentRole
+ *
+ * @package App\Models\Components
+ */
+class CurrentRole extends BaseComponent
 {
-    /** @var  User $user */
-    protected $user;
-
-    public function __construct(Model $user)
-    {
-        $this->user = $user;
-    }
+    /** @var  User $model */
+    protected $model;
 
     /** @return bool */
     public function isAdmin()
     {
-        return $this->user->role_id == User::ADMIN;
+        return $this->model->role_id == User::ADMIN;
     }
 
     /** @return bool */
     public function isUser()
     {
-        return $this->user->role_id == User::USER;
+        return $this->model->role_id == User::USER;
     }
 }

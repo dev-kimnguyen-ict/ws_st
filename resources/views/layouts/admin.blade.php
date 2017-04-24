@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <title>{{ $title }}</title>
+    <title>{{ $_page->get('title') }}</title>
     <meta name="robots" content="noindex, nofollow"/>
 
     <!-- <link rel="shortcut icon" href="images/icon.png" type="image/x-icon"/> -->
@@ -16,8 +16,9 @@
     <script type="text/javascript" src="{{ asset('js/nprogress.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/custom.js') }}"></script>
     @yield('head.scripts')
-    
+
 </head>
+
 <body style="display: none;">
     <!-- Side bar container -->
     <div id="left_content">
@@ -39,17 +40,17 @@
             </div>
         </div>
         <!-- End top bar -->
-        
+
         @yield('script')
-        
+
         <!-- Title top bar -->
         <div class="titleArea">
             <div class="wrapper">
 
                 <!-- Page title -->
                 <div class="pageTitle">
-                    <h5>{{ $title }}</h5>
-                    <span>{{ $subTitle }}</span>
+                    <h5>{{ $_page->get('title') }}</h5>
+                    <span>{{ $_page->get('sub_title') }}</span>
                 </div>
 
                 <!-- Menu action -->
@@ -63,7 +64,7 @@
             </div>
         </div>
         <!-- End title top bar -->
-        
+
         <div class="line"></div>
 
         <!-- Main content -->

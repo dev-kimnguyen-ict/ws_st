@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Http\Request;
 
 /**
  * Class Seo
@@ -20,6 +22,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Seo extends Model
 {
+    use SoftDeletes;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -32,26 +36,28 @@ class Seo extends Model
     ];
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
-     */
-    public function category()
-    {
-        return $this->hasOne(Category::class, 'seoid');
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
-     */
-    public function product()
-    {
-        return $this->hasOne(Product::class, 'seoid');
-    }
-
-    /**
      * @return \Illuminate\Database\Eloquent\Relations\MorphTo
      */
     public function seoable()
     {
         return $this->morphTo();
+    }
+
+    /**
+     * Make seo
+     *
+     * @param Request $request
+     * @param Seo|null $seo
+     * @return Seo
+     */
+    public static function makeFromRequest(Request $request, $seo = null)
+    {
+        $seo = $seo ?: new Seo();
+
+        $seo->title = $request->get('seo_title');
+        $seo->description = $request->get('seo_description');
+        $seo->alias = $request->get('seo_alias');
+
+        return $seo;
     }
 }

@@ -25,11 +25,12 @@ class CreateBasicDatabase extends Migration
             $table->string('address')->nullable();
             $table->date('birthday')->nullable();
             $table->tinyInteger('gender')->default(User::MALE);
-            $table->boolean('active')->default(false);
+            $table->boolean('active')->default(true);
             $table->boolean('blocked')->default(false);
             $table->tinyInteger('role_id')->default(User::USER);
             $table->rememberToken();
             $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::create('password_resets', function (Blueprint $table) {
@@ -46,6 +47,7 @@ class CreateBasicDatabase extends Migration
             $table->string('user_provider_id');
             $table->string('provider');
             $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::create('seos', function (Blueprint $table) {
@@ -56,17 +58,19 @@ class CreateBasicDatabase extends Migration
             $table->string('keywords')->nullable();
             $table->string('robots')->nullable();
             $table->string('revisit_after')->nullable();
-            $table->string('alias')->unique();
+            $table->string('alias');
+            $table->softDeletes();
             $table->timestamps();
         });
 
         Schema::create('categories', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('description', 300);
+            $table->string('description', 300)->nullable();
             $table->integer('parent_id')->nullable();
             $table->boolean('active')->default(true);
             $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::create('products', function (Blueprint $table) {
@@ -82,6 +86,7 @@ class CreateBasicDatabase extends Migration
             $table->integer('category_id')->nullable();
             $table->boolean('active')->default(true);
             $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::create('uploads', function (Blueprint $table) {
@@ -95,6 +100,7 @@ class CreateBasicDatabase extends Migration
             $table->string('mime')->nullable();
             $table->morphs('uploadable');
             $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::create('orders', function (Blueprint $table) {
@@ -111,6 +117,7 @@ class CreateBasicDatabase extends Migration
             $table->integer('user_id')->nullable();
             $table->timestamp('delivery_date')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::create('order_details', function (Blueprint $table) {
@@ -123,6 +130,7 @@ class CreateBasicDatabase extends Migration
             $table->integer('quantity')->default(0);
             $table->double('amount')->default(0);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
