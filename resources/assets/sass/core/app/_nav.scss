@@ -1,0 +1,80 @@
+.nav{
+	height: 		$height-nav;
+	box-sizing: 	border-box;
+
+	.container{
+		background: 	$background-container-nav;
+		border-top: 	$border-top-container-nav;
+		height: 		$height-nav + $border-top-container-nav-size;
+		position: 		relative;
+		top: 			-($height-nav / 2);
+	}
+}
+ul.main-menu{
+	list-style-type: 	none;
+	margin: 			0px;
+	padding: 			0px;
+	@include size(100%, 100%);
+
+	> li.menu-item{
+		float: 			left;
+		position: 		relative;
+		@include transition(background 0.3s ease-in-out);
+
+		&:hover{
+			background: 	$background-menu-item-hover;
+			& > .submenu{
+				display: block;
+			}
+		}
+
+		> a{
+			display: 			block;
+			line-height: 		$height-nav;
+			padding: 			0 30px;
+			text-decoration: 	none;
+			color: 				$color-menu-item;
+			border-right: 		solid 1px lighten($black, 5%);
+			text-transform: 	uppercase;
+			font-weight: 		600;
+
+			i{
+				position: 	absolute;
+				right: 		12px;
+				line-height: $height-nav;
+				top: -2px;
+			}
+		}
+	}
+	> .actived{
+		background: $background-menu-item-hover;
+		> a:hover{
+			background: darken($background-menu-item-hover, 5%)
+		}
+	}
+}
+.submenu{
+	display: 			none;
+	margin: 			0;
+	list-style-type: 	none;
+	position: 			absolute;
+	padding: 			0;
+	width: 				150%;
+
+	li {
+		background: 	$background-menu-item-hover;
+		position: 		relative;
+
+		&:hover{
+			background: darken($background-menu-item-hover, 5%);
+			@include display-submenu(5%);
+		}
+
+		> a{
+			display: 			block;
+			text-decoration: 	none;
+			color: 				$color-menu-item;
+			padding: 			10px 30px;
+		}
+	}
+}

@@ -1,0 +1,30 @@
+html { box-sizing: border-box; }
+
+*, *::after, *::before { box-sizing: inherit; }
+
+.container { max-width: 1000px; margin-left: auto; margin-right: auto; }
+.container::after { clear: both; content: ""; display: block; }
+
+body, header, nav, section, footer { margin: 0; font-family: 'Open Sans'; font-weight: 400; font-size: 13px; }
+
+.header { background: url("../images/gradient_bg.jpg") repeat-y center; height: 180px; }
+
+.nav { height: 70px; box-sizing: border-box; }
+.nav .container { background: #1E1E1E; border-top: solid 2px #000; height: 72px; position: relative; top: -35px; }
+
+ul.main-menu { list-style-type: none; margin: 0px; padding: 0px; height: 100%; width: 100%; }
+ul.main-menu > li.menu-item { float: left; position: relative; transition: background 0.3s ease-in-out; -moz-transition: background 0.3s ease-in-out; -webkit-transition: background 0.3s ease-in-out; }
+ul.main-menu > li.menu-item:hover { background: #3d3d3d; }
+ul.main-menu > li.menu-item:hover > .submenu { display: block; }
+ul.main-menu > li.menu-item > a { display: block; line-height: 70px; padding: 0 30px; text-decoration: none; color: #fff; border-right: solid 1px #0d0d0d; text-transform: uppercase; font-weight: 600; }
+ul.main-menu > li.menu-item > a i { position: absolute; right: 12px; line-height: 70px; top: -2px; }
+ul.main-menu > .actived { background: #3d3d3d; }
+ul.main-menu > .actived > a:hover { background: #303030; }
+
+.submenu { display: none; margin: 0; list-style-type: none; position: absolute; padding: 0; width: 150%; }
+.submenu li { background: #3d3d3d; position: relative; }
+.submenu li:hover { background: #303030; }
+.submenu li:hover > .submenu { display: block; width: 100%; top: 0; left: 100%; }
+.submenu li:hover > .submenu li { background: #303030; }
+.submenu li:hover > .submenu li:hover { background: #282828; }
+.submenu li > a { display: block; text-decoration: none; color: #fff; padding: 10px 30px; }

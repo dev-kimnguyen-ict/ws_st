@@ -1,0 +1,403 @@
+.content .item .item-action {
+	width: 100% !important;
+}
+.content .item .btn {
+	width: 50% !important;
+}
+
+.user-notification {
+	width: 100%;
+	padding: 16px 0;
+	font-family: inherit;
+	font-size: 19px;
+	background: rgba(255,255,255,.95);
+	text-align: center;
+	box-sizing: border-box;
+	z-index: 99999999999;
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+.loading {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    position: fixed;
+    z-index: 999999;
+    top: 0;
+    left: 0;
+}
+.loading div {
+    position: relative;
+    bottom: -45%;
+}
+
+.icon-fixed {
+    background: #FF8E0E;
+	color: #fff;
+    font-size: 30px;
+    text-align: center;
+    cursor: pointer;
+    z-index: 9999999;
+    position: fixed;
+    right: 0;
+    width: 50px;
+	height: 50px;
+	line-height: 50px;
+
+	-webkit-box-sizing: border-box !important;
+	-moz-box-sizing: border-box !important;
+	box-sizing: border-box !important;
+
+	-webkit-transition: 0.5s ease;
+	-moz-transition: 0.5s ease;
+	-ms-transition: 0.5s ease;
+	-o-transition: 0.5s ease;
+	transition: 0.5s ease;
+}
+.back-to-top {
+	display: none;
+	bottom: 40%;
+}
+.cart-fixed {
+	display: block;
+	bottom: 50%;
+}
+.icon-fixed:hover {
+	background: #C06701;
+}
+
+.purechat-widget-title {
+	width: 230px !important;
+}
+.purechat-widget-header,
+.purechat-collapsed-outer,
+.purechat-expanded {
+	width: 290px !important;
+}
+.over {
+    width: 100%;
+    height: 100%;
+    display: block;
+    z-index: 9999999;
+    position: absolute;
+}
+#over {
+	background: rgba(0,0,0, 0.5);
+    width: 100%;
+    height: 100%;
+    display: block;
+    z-index: 9999999;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.preview-image {
+	width: 30%;
+	padding: 5px;
+	background: #fff;
+	margin-top: 20px;
+	margin-left: 37%;
+}
+.container-cart {
+    background: #fff;
+    width: 900px;
+    height: 80%;
+    margin: 5% auto;
+}
+.cart-title {
+    width: 100%;
+    background: #FF8E0E;
+    font-size: 24px;
+    padding: 10px;
+    color: #fff;
+    text-align: center;
+}
+.container-cart .close {
+    padding-right: 5px;
+}
+
+/**********************************/
+.login-menu {
+	list-style-type: none !important;
+}
+.container-slider {
+	background: #D5D5D5 !important;
+}
+/******************************/
+.random-list ul {
+	padding: 0px;
+}
+.random-list .item img {
+	max-width: 180px;
+	max-height: 180px;
+	min-height: 180px;
+	min-width: 180px;
+}
+.random-list .item-title,
+.random-list .item-price {
+	display: inline-block;
+	width: 100%;
+}
+.random-list .item-title,
+.random-list .item-price {
+	margin-bottom: 0px !important;
+}
+.random-list .item-price {
+	margin-top: 5px !important;
+}
+
+/**************************/
+.frame-img-big {
+	width: 100%;
+	height: 420px;
+	background: black;
+	overflow: hidden;
+	margin-bottom: 10px;
+}
+.frame-img-big > div{
+	max-height: 420px;
+	line-height: 420px;
+	overflow: inherit;
+}
+.frame-img-big > div > img {
+	width: 100%;
+	max-height: 420px;
+}
+/* Anh thu nho */
+.list-image-thumb {
+	height: 50px;
+	overflow: hidden;
+	list-style-type: none;
+	padding: 0px;
+}
+
+.list-image-thumb > li {
+	float: left;
+	height: 50px;
+	width: 50px;
+	overflow: hidden;
+	background: rgba(0,0,0,.8);
+}
+.list-image-thumb > li {
+	line-height: 50px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+.image-thumb {
+	width: 50px;
+	max-height: 50px;
+}
+/*******************************/
+.notification {
+	margin: 20px;
+}
+.item .img-thumbnail {
+	max-width: 186px;
+	max-height: 186px;
+	min-height: 186px;
+	min-width: 186px;
+}
+.section, body {
+	background: #767676 !important;
+}
+a, a.focus {
+	outline: none !important;
+}
+.container-section {
+	padding: 15px !important;
+}
+.content-group {
+	box-sizing: border-box;
+	overflow: hidden;
+}
+.tool-box {
+	padding-right: 20px !important;
+}
+.view-all {
+	padding: 0px !important;
+	margin: 20px;
+}
+/* fix */
+.content-group {
+	padding-bottom: 0px !important;
+}
+
+/* PAGINATION */
+.pagination {
+	float: right;
+}
+.pagination a {
+	text-decoration: none;
+}
+
+.page {
+	padding: 5px 10px 5px 10px;
+	margin-right: 5px;
+	border: solid 1px #e6e6e6;
+	color: black;
+	-webkit-transition: background 0.2s ease-in-out;
+	-moz-transition: background 0.2s ease-in-out;
+}
+.page:hover {
+	color: white;
+	background: #FE8C19;
+}
+.page-current {
+	background: #FE8C19;
+	color: white !important;
+}
+.page-current:hover {
+	background: #D87A1C;
+}
+/* END PAGINATION */
+.title-actived > a {
+    color: #fff !important;
+    font-size: 14px;
+}
+.logo {
+    padding: 0px !important;
+    background: transparent !important;
+    width: 110px;
+    height: 110px;
+    float: left;
+}
+
+.random-list {
+    padding-bottom: 30px;
+}
+.border-bottom {
+    border-bottom: solid 3px transparent;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+}
+.border-bottom:hover {
+    border-bottom: solid 3px #FF8E0E;
+}
+.container-section {
+    padding-bottom: 30px !important;
+}
+
+@media screen and (min-width: 768px) {
+.footer .container-footer {
+    padding-left: 0;
+    padding-right: 0;
+    width: 85%;
+}
+}
+@media screen and (max-width: 320px) {
+.footer .container-footer {
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+}
+}
+.glyphicon {
+    top: 0;
+}
+.footer {
+    background: #222222 none repeat scroll 0 0;
+    color: #999;
+    display: block;
+    padding-top: 10px;
+}
+.footer .container-footer {
+    display: block;
+}
+.footer .container-footer .footer-content {
+    float: left;
+}
+@media screen and (max-width: 320px) {
+.footer .container-footer .footer-content {
+    padding: 2%;
+    width: 100%;
+}
+}
+@media screen and (min-width: 321px) and (max-width: 768px) {
+.footer .container-footer .footer-content {
+    margin-left: 5%;
+    width: 43%;
+}
+}
+@media screen and (min-width: 769px) {
+.footer .container-footer .footer-content {
+    width: 20%;
+}
+.footer .container-footer .footer-content:not(:last-child) {
+    margin-right: 3%;
+}
+.footer .container-footer .footer-content:last-child {
+    width: 31%;
+}
+}
+.footer .container-footer .footer-content a {
+    text-decoration: none;
+}
+.footer .container-footer .footer-content .footer-title {
+    border-bottom: 2px solid #333;
+    color: #fff;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    transition: all 0.3s ease-in-out 0s;
+}
+.footer .container-footer .footer-content .footer-title:hover {
+    background: #333333 none repeat scroll 0 0;
+    border-bottom: 2px solid #d2322d;
+    padding-left: 10px;
+}
+.footer .container-footer .footer-content .footer-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0 0 10px;
+}
+.footer .container-footer .footer-content .footer-list > li {
+    border-bottom: 1px solid #333;
+    overflow: hidden;
+    padding: 7px 7px 7px 0;
+}
+.footer .container-footer .footer-content .footer-list > li:hover {
+    background: #333333 none repeat scroll 0 0;
+    border-bottom: 1px solid #d2322d;
+}
+.footer .container-footer .footer-content .footer-list > li:hover > a {
+    color: #fff;
+}
+.footer .container-footer .footer-content .footer-list > li:hover:not(.special) > a {
+    font-weight: bold;
+    padding-left: 15px;
+}
+.footer .container-footer .footer-content .footer-list > li > a {
+    color: #999;
+    display: block;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out 0s;
+}
+.footer .copyright {
+    background: #333333 none repeat scroll 0 0;
+    margin-top: 30px;
+    padding: 10px;
+    transition: all 0.3s ease-in-out 0s;
+}
+.footer .copyright:hover {
+    color: #fff;
+}
+
+/**
+ * Fix uppercase, multiple  in menu for laravel;
+ */
+.text-uppercase{
+    text-transform: uppercase;
+}
+
+.social-auth{height:36px;line-height:36px;display:block;position:absolute;top:0;right:10px;}.social-auth a{text-decoration:none;width:24px;height:24px;text-align:center;float:right;background-position:center;position:relative;top:6px;right:15px}.social-auth .social-auth-facebook{background:url("../images/iconF.png");margin-left:10px}  .social-auth .social-auth-google{background:url("../images/iconG.png")}
+.has-error{
+    background: #E74430;
+    color: white;
+    font-size: 12px;
+    padding: 3px 10px 3px 10px;
+    margin-bottom: 5px;
+    border-radius: 3px;
+}

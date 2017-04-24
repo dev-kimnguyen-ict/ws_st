@@ -1,0 +1,20 @@
+@mixin transition($value){
+	transition: 			$value;
+	-moz-transition: 		$value;
+	-webkit-transition: 	$value;
+}
+
+@mixin display-submenu($opacity: 5%){
+	& > .submenu{
+		display: block;
+		width: 100%;
+		top: 0;
+		left: 100%;
+		li {
+			background: darken($background-menu-item-hover, $opacity);
+			&:hover{
+				background: darken($background-menu-item-hover, $opacity + 3%);
+			}
+		};
+	}
+}
