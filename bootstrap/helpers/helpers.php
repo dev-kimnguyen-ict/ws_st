@@ -19,20 +19,19 @@ function userInformationExists(){
  * @return boolean
  */
 function isAdmin(){
-    // TODO: I can check many condition in here
     $user = Auth::user();
-    return Auth::check() && $user->groupid == ADMIN && $user->actived && !$user->blocked;
+    return $user && $user->currentRole()->isAdmin();
 }
 
 function isMember()
 {
     $user = Auth::user();
-    return Auth::check() && $user->groupid == USER && $user->actived && !$user->blocked;
+    return $user && $user->currentRole()->isUser();
 }
 
 function blocked(){
     $user = Auth::user();
-    return Auth::check() && $user->actived && $user->blocked;
+    return $user && $user->currentStatus()->isBlocked();
 }
 
 function actived(){

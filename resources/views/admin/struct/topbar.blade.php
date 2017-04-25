@@ -1,5 +1,5 @@
 <div class="welcome">
-    <span>Xin chào: <b>{{ Auth::user()->name }}!</b></span>
+    <span>Xin chào: <b>{{ $_auth->getIdentifier() }}!</b></span>
 </div>
 
 <div class="userNav">

@@ -6,11 +6,11 @@ Route::get('/', 'PagesController@index');
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('auth.getLogin');
 Route::post('login', 'Auth\LoginController@login')->name('auth.postLogin');
 Route::get('logout', 'Auth\LoginController@logout')->name('auth.logout');
-Route::get('register', 'Auth\AuthController@showRegistrationForm')->name('auth.getRegister');
-Route::post('register', 'Auth\AuthController@register')->name('auth.postRegister');
-Route::get('password/reset/{token?}', 'Auth\PasswordController@showResetForm')->name('password.getPasswordReset');
-Route::post('password/reset', 'Auth\PasswordController@reset')->name('password.postPasswordReset');
-Route::post('password/email', 'Auth\PasswordController@sendResetLinkEmail')->name('password.sendToEmail');
+Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('auth.getRegister');
+Route::post('register', 'Auth\RegisterController@register')->name('auth.postRegister');
+Route::get('password/reset/{token?}', 'Auth\ResetPasswordController@showResetForm')->name('password.getPasswordReset');
+Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('password.postPasswordReset');
+Route::post('password/email', 'Auth\ResetPasswordController@sendResetLinkEmail')->name('password.sendToEmail');
 Route::get('auth/{provider}', 'Auth\SocialController@redirectToProvider')->name('auth.social.redirect');
 Route::get('auth/{provider}/callback', 'Auth\SocialController@handleProviderCallback')->name('auth.social.callback');
 
@@ -19,15 +19,8 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/', 'Admin\PagesController@dashboard')->name('admin.dashboard');
     Route::get('/orders', 'Admin\OrderManagerController@index')->name('admin.order.index');
 
-    Route::group(['prefix' => 'categories'], function () {
-        Route::get('/', 'Admin\CategoryManagerController@index')->name('admin.category.index');
-        Route::get('/filter', 'Admin\CategoryManagerController@filter')->name('admin.category.filter');
-        Route::get('/create', 'Admin\CategoryManagerController@create')->name('admin.category.create');
-        Route::post('/create', 'Admin\CategoryManagerController@store')->name('admin.category.store');
-        Route::get('/edit/{id}', 'Admin\CategoryManagerController@edit')->name('admin.category.edit');
-        Route::put('/edit/{id}', 'Admin\CategoryManagerController@update')->name('admin.category.update');
-        Route::delete('/delete/{id}', 'Admin\CategoryManagerController@destroy')->name('admin.category.destroy');
-    });
+    Route::resource('category', 'Admin\CategoryController', ['as' => 'admin']);
+    Route::get('/category/filter', 'Admin\CategoryController@filter')->name('admin.category.filter');
 
     Route::group(['prefix' => 'products'], function () {
         Route::get('/', 'Admin\ProductManagerController@index')->name('admin.product.index');

@@ -14,4 +14,18 @@ interface UserContract
     const USER = 5;
     const MALE = 1;
     const FEMALE = 2;
+
+    /**
+     * Get full name
+     *
+     * @return string|null
+     */
+    public function getFullName();
+
+    /**
+     * Get identifier string
+     *
+     * @return string
+     */
+    public function getIdentifier();
 }

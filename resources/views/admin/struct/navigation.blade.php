@@ -7,7 +7,7 @@
     <a href="#" class="profileFace">
         <img src="{{ URL::asset('contents/images/user.png') }}" alt="Avatar" width="40px,">
     </a>
-    <span>Xin chào: <strong>{{ Auth::user()->email }}!</strong></span>
+    <span>Xin chào: <strong>{{ $_auth->getIdentifier() }}!</strong></span>
     <span>{{ Auth::user()->name }}</span>
     <div class="clear"></div>
 </div>
