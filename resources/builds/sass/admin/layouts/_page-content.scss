@@ -1,0 +1,90 @@
+.page-content {
+    background: #e6e8ea;
+
+    .navbar {
+        box-shadow: 0 2px 2px -2px rgba(0, 0, 0, .5);
+        -moz-box-shadow: 0 2px 2px -2px rgba(0, 0, 0, .5);
+        -webkit-box-shadow: 0 2px 2px -2px rgba(0, 0, 0, .5);
+    }
+
+    .page-body {
+        padding: 20px;
+
+        .container,
+        .container-fluid {
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        .panel-mod {
+            background: #ffffff;
+            border: none;
+            border-radius: 2px;
+            -moz-border-radius: 2px;
+            -webkit-border-radius: 2px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+            -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+            -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+
+            .filters {
+                ul.filter-tab-list {
+                    align-items: stretch;
+                    background-color: #f5f6f7;
+                    border-radius: 3px 3px 0 0;
+                    display: flex;
+                    display: -webkit-box;
+                    flex-wrap: nowrap;
+                    list-style: outside none none;
+                    margin: 0;
+                    overflow: visible;
+                    padding: 0;
+
+                    .filter-tab-item {
+                        align-items: stretch;
+                        display: flex;
+                        flex-grow: 0;
+                        flex-shrink: 0;
+                        position: relative;
+                        text-align: -webkit-match-parent;
+
+                        .filter-tab {
+                            text-decoration: none;
+                            align-items: center;
+                            border-right: 1px solid #ebeef0;
+                            color: #798c9c;
+                            cursor: pointer;
+                            display: flex;
+                            display: -webkit-box;
+                            flex-grow: 1;
+                            font-size: 13px;
+                            justify-content: center;
+                            line-height: 1;
+                            padding: 12px 20px;
+                            position: relative;
+                            text-align: center;
+                        }
+
+                        &.active {
+                            .filter-tab {
+                                background-color: #ffffff;
+                                color: #31373d;
+                                cursor: default;
+                                text-decoration: none;
+                                border-bottom: 0;
+                            }
+                        }
+                    }
+                }
+                .filter-container {
+                    padding: 20px;
+                }
+            }
+
+            .panel-body {
+                padding: 20px;
+            }
+        }
+    }
+}

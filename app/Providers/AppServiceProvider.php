@@ -20,14 +20,13 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Category::observe(CategoryObserver::class);
-        $this->listenDb();
+
+        $this->logDatabaseQuery();
         $this->registerCustomValidationRules();
     }
 
     /**
      * Register any application services.
-     *
-     * @return void
      */
     public function register()
     {
@@ -36,15 +35,21 @@ class AppServiceProvider extends ServiceProvider
         });
     }
 
-    protected function listenDb()
+    /**
+     * Log query string to log file.
+     */
+    protected function logDatabaseQuery()
     {
-        if(env('APP_LOG_QUERY', false)) {
+        if (env('APP_LOG_QUERY', false)) {
             DB::listen(function ($event) {
                 Log::info($event->sql, $event->bindings);
             });
         }
     }
 
+    /**
+     * Add custom validation rules
+     */
     protected function registerCustomValidationRules()
     {
         Validator::extend('phone_number', function ($attribute, $value, $parameters, $validator) {
@@ -54,6 +59,11 @@ class AppServiceProvider extends ServiceProvider
         Validator::extend('card_number', function ($attribute, $value, $parameters, $validator) {
             $cardRegex = '/^[0-9]+(\-?[0-9]+)*(\/?[0-9]+(\-?[0-9]+)*)(\,[0-9]+(\-?[0-9]+)*(\/?[0-9]+(\-?[0-9]+)*))*$/';
             return preg_match($cardRegex, $value);
+        });
+
+        Validator::extend('price_number', function ($attribute, $value, $parameters, $validator) {
+            $priceRegex = '/^[0-9]*(\,[0-9]{3})*$/';
+            return preg_match($priceRegex, $value);
         });
     }
 }

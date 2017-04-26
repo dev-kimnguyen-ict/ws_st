@@ -23,4 +23,24 @@ class Controller extends BaseController
         $globals->set('title', $title);
         $globals->set('sub_title', $subTitle);
     }
+
+    /**
+     * Return json response
+     *
+     * @param array $data
+     * @param bool $success
+     * @param int $status
+     * @param array $headers
+     * @param int $options
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function json($data = [], $success = true, $status = 200, array $headers = [], $options = 0)
+    {
+        $data = [
+            'success' => $success,
+            'payload' => $data,
+        ];
+
+        return response()->json($data, $status, $headers, $options);
+    }
 }

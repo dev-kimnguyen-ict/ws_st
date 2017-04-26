@@ -2,11 +2,13 @@
 
 namespace App\Models;
 
-use App\Models\Components\CurrentRole;
-use App\Models\Components\CurrentStatus;
+use App\Components\CurrentRole;
+use App\Components\CurrentStatus;
 use App\Models\Contracts\UserContract;
+use App\Models\Traits\Uploadable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Laravel\Passport\HasApiTokens;
 
 /**
  * Class User
@@ -31,7 +33,9 @@ use Illuminate\Notifications\Notifiable;
  */
 class User extends Authenticatable implements UserContract
 {
-    use Notifiable;
+    use HasApiTokens,
+        Notifiable,
+        Uploadable;
 
     /**
      * The attributes that are mass assignable.

@@ -12,3 +12,6 @@ npm-debug.log
 /.docker
 docker-compose.yml
 /public/uploads
+/public/coverage
+/public/builds
+public/mix-manifest.json

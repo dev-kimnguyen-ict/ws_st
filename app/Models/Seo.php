@@ -52,7 +52,7 @@ class Seo extends Model
      */
     public static function makeFromRequest(Request $request, $seo = null)
     {
-        $seo = $seo ?: new Seo();
+        $seo = $seo ?: new self();
 
         $seo->title = $request->get('seo_title');
         $seo->description = $request->get('seo_description');

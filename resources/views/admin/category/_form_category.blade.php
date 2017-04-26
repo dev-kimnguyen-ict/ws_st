@@ -15,7 +15,15 @@
         <div class="oneTwo">
             <select name="parent_id" class="select-category textC" style="margin-left: 100px;">
                 <option value="0" style="font-weight: bold;">--- Chọn danh mục cha ---</option>
-                {{ getCategory($categories, $category->parent_id ?? null) }}
+                @foreach($categories as $parent)
+                    <option
+                        @if(isset($category) && $category->parent_id == $parent->getKey())
+                        selected="selected"
+                        @endif
+                        value="{{$parent->getKey()}}">
+                        {{$parent->name}}
+                    </option>
+                @endforeach
             </select>
             <span class="autocheck" name="name_autocheck" style="margin-left: 90px;"></span>
             <div class="clear error" name="name_error" style="margin-left: 90px;">

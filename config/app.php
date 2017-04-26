@@ -124,6 +124,13 @@ return [
 
     'log_level' => env('APP_LOG_LEVEL', 'debug'),
 
+    /**
+     * Client secret
+     */
+
+    'client_id' => env('APP_CLIENT_ID', 1),
+    'client_secret' => env('APP_CLIENT_SECRET', ''),
+
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers
@@ -170,6 +177,8 @@ return [
         Laravel\Tinker\TinkerServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
+        Laravel\Passport\PassportServiceProvider::class,
+
 
         /*
          * Application Service Providers...
@@ -194,7 +203,6 @@ return [
     */
 
     'aliases' => [
-
         'App' => Illuminate\Support\Facades\App::class,
         'Artisan' => Illuminate\Support\Facades\Artisan::class,
         'Auth' => Illuminate\Support\Facades\Auth::class,
@@ -228,6 +236,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+
         // Package alias:
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,

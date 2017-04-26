@@ -12,10 +12,10 @@ abstract class TestCase extends BaseTestCase
     const USER = User::USER;
     const ADMIN = User::ADMIN;
 
-    protected function setAuth($role, $authInformation = [])
+    protected function setAuth($role, $data = [])
     {
-        $authInformation = array_merge($authInformation, ['role_id' => $role]);
-        $auth = factory(User::class)->create($authInformation);
+        $data = array_merge($data, ['role_id' => $role]);
+        $auth = factory(User::class)->create($data);
         $this->actingAs($auth);
     }
 }

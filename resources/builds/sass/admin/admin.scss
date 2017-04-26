@@ -1,0 +1,13 @@
+// Vendors:
+@import "../../../../node_modules/bootstrap/scss/bootstrap";
+@import "../../../../node_modules/font-awesome-sass/assets/stylesheets/font-awesome";
+
+// Base style:
+@import "layouts/variables";
+@import "layouts/mixins";
+@import "layouts/normalize";
+@import "layouts/layout";
+
+// Components:
+@import "layouts/sidebar";
+@import "layouts/page-content";

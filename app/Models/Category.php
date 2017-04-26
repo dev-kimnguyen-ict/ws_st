@@ -72,15 +72,13 @@ class Category extends Model
      * @param Category|null $category
      * @return Category
      */
-    public static function makeFromRequest(Request $request, $category = null)
+    public static function makeFromRequest(Request $request, Category $category = null)
     {
-        $category = $category ?: new Category();
-        $parentId = $request->get('parent_id');
-        $parentId = $parentId ?: null;
+        $category = $category ?: new self();
 
         $category->name = $request->get('name');
         $category->description = $request->get('description');
-        $category->parent_id = $parentId;
+        $category->parent_id = $request->get('parent_id') ?: null;
         $category->active = $request->get('active');
         $category->generateAncestorPath();
 

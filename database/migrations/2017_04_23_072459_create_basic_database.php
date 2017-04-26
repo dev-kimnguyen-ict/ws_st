@@ -82,7 +82,7 @@ class CreateBasicDatabase extends Migration
             $table->string('description', 300);
             $table->text('content')->nullable();
             $table->integer('view')->default(0);
-            $table->tinyInteger('mark')->default(0);
+            $table->tinyInteger('mark_as')->default(0);
             $table->integer('category_id')->nullable();
             $table->boolean('active')->default(true);
             $table->timestamps();

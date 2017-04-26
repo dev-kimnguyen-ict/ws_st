@@ -1,0 +1,43 @@
+.navigation {
+    li {
+        padding-left: 20px;
+        position: relative;
+        &.active:after {
+            content: '\f0d9';
+            font-family: 'FontAwesome';
+            position: absolute;
+            top:0;
+            right: 0;
+            line-height: 35px;
+        }
+        &.active,
+        &:hover {
+            background: #2c3e50;
+            a {
+                color: #ffffff;
+            }
+        }
+
+        &.separate {
+            border-bottom: solid 1px #2c3e50;
+        }
+
+        a {
+            color: #cad6e2;
+            display: block;
+            font-size: 13px;
+            height: 35px;
+            padding: 5px 5px 5px 0;
+            width: 100%;
+
+            i {
+                font-size: 15px;
+                margin-right: 5px;
+                vertical-align: -10%;
+            }
+            span {
+
+            }
+        }
+    }
+}

@@ -1,9 +1,0 @@
-.container{
-	@include outer-container($width-container);
-}
-
-// @for $i from 1 through $column-number{
-// 	.col-#{$i}{
-// 		@include span-columns($i);
-// 	}
-// }

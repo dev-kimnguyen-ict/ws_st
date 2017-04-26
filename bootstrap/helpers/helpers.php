@@ -72,7 +72,7 @@ if (! function_exists('getCategory')) {
     function getCategory($categories = null, $selectedID = null)
     {
         if($categories->count() > 0){
-            $categories = $categories->sortBy('parentid')->groupBy('parentid');
+            $categories = $categories->sortBy('parent_id')->groupBy('parent_id');
             foreach ($categories->get(null) as $parent) {
                 echo getOption($parent, 'optgroup', $selectedID);
                 echo getOptionParent($categories, $parent->id, 1, $selectedID);

@@ -18,4 +18,17 @@ return [
             'name' => 'Category name',
         ],
     ],
+
+    'product' => [
+        'title' => [
+            'index' => 'Product list',
+            'create' => 'Create product',
+            'edit' => 'Edit product',
+        ],
+        'sub' => [
+            'index' => 'Manage products',
+            'create' => 'Add new your product',
+            'edit' => 'Edit your product',
+        ],
+    ],
 ];
